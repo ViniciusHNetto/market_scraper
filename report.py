@@ -1,9 +1,10 @@
 import os
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 
 def generate_html_report(by_market: dict, output_path: str = "docs/index.html"):
-    now = datetime.now().strftime("%d/%m/%Y %H:%M")
+    now = datetime.now(ZoneInfo("America/Sao_Paulo")).strftime("%d/%m/%Y %H:%M")
     html = [f"""<!DOCTYPE html>
 <html lang="pt-br">
 <head>
