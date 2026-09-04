@@ -2,8 +2,11 @@ name: Atualizar comparador de preços
 
 on:
   schedule:
-    - cron: '0 11 * * *'   # todo dia ~08h horário de Brasília
-  workflow_dispatch:        # permite clicar em "Run workflow" manualmente
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # <- adiciona isso
 
 jobs:
   scrape:
