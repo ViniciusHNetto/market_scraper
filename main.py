@@ -1,5 +1,4 @@
 from collections import defaultdict
-
 from config import MARKETS, ITEMS, BULK_QUANTITIES_TO_CHECK
 from scrapers.init import SCRAPER_REGISTRY
 from matcher import rank_candidates
@@ -92,7 +91,7 @@ def run():
             if r.url:
                 print(f"    {r.url}")
                 
-    generate_html_report(by_market)
+    generate_html_report(by_market, items=ITEMS, markets=list(MARKETS.keys()), by_item=by_item)
 
     return results
 
